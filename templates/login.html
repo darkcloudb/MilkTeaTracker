@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="toggle">
-  <p>Login | <a href="/signup/">Sign Up</a></p>
+  <p class="toggle2">Login | <a href="/signup/">Sign Up</a></p>
   <div class="login">
     <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %} {{ form.as_p }}

@@ -6,8 +6,8 @@ from django.forms.widgets import PasswordInput
 
 class SignUpForm(forms.Form):
     username = forms.CharField(max_length=30)
-    password1 = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput)
+    confirm_password = forms.CharField(widget=forms.PasswordInput)
 
 # Create the Login Form
 

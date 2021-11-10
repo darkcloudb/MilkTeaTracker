@@ -23,5 +23,7 @@ from Bets import views as b_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', b_view.HomeView.as_view(), name='homepage')
+    path('', b_view.HomeView.as_view(), name='homepage'),
+    path('login/', u_view.LoginView.as_view()),
+    path('signup/', u_view.SignUpView.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

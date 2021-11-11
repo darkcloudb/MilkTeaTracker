@@ -25,5 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', b_view.HomeView.as_view(), name='homepage'),
     path('login/', u_view.LoginView.as_view()),
-    path('signup/', u_view.SignUpView.as_view())
+    path('signup/', u_view.SignUpView.as_view()),
+    path('logout/', u_view.LogoutView.as_view()),
+    path('profile/<int:id>/', b_view.EditProfile.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

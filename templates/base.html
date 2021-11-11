@@ -6,7 +6,8 @@
       body {
         font-family: sans-serif;
         margin: 0;
-        background: #f2f2f2;
+        background: white;
+        background-image: ;
       }
       .login {
         width: 400px;
@@ -21,20 +22,53 @@
         margin-top: 150px;
         border-style: solid;
         border-width: 1px;
-        border: solid 1px lightgray;
-        background-color: white;
-        border-radius: 5%;
+        border: solid 1px black;
+        /* background-color: #07b53b; */
+        background-color: #69bf64;
+        border-radius: 25px;
         padding-bottom: 15px;
         padding-left: 20px;
+        color: white;
       }
       .toggle2 {
         font-size: 25px;
         text-align: center;
       }
+      a {
+        text-decoration: none;
+      }
+      .header {
+        padding: 15px;
+        height: 2.75rem;
+        text-align: left;
+        font-size: 1.45em;
+        background: #f2f2f2;
+        margin-bottom: 15px;
+        display: inline-block;
+        width: 100%;
+        border: solid 1px lightgray;
+        color: black;
+      }
+      .header a {
+        color: black;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
-    <div class="header"></div>
+    <div class="header">
+      {% if not user.is_authenticated %} {% else %}
+      <a href="/">Home</a> | <a href="/">Bets</a> |
+      <a href="/profile/{{request.user.id}}/">Profile</a> |
+      <a class="logoff" href="/logout/">Logout</a>
+      <img
+        class="prof_border"
+        src="{{ request.user.prof_pic.url }}"
+        width="50"
+        height="50"
+      />
+      {% endif %}
+    </div>
     <div class="container">{% block content %} {% endblock %}</div>
   </body>
 </html>

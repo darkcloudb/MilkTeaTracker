@@ -12,6 +12,14 @@ class Bets(models.Model):
     )
     posted_at = models.DateTimeField(auto_now_add=True)
     body = models.TextField()
+    place_bet = models.ManyToManyField(
+        MyUser,
+        blank=True,
+        symmetrical=False
+    )
+    resolved = models.BooleanField()
+    
+
 
     def __str__(self):
         return self.body
